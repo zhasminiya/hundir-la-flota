@@ -72,7 +72,7 @@ Scrum Master: Eugenia Kostiukovskaia Essitachvili
 
 Backend Developer: Eugenia Kostiukovskaia Essitachvili
 
-Frontend Developer: Antonio Moreno
+Frontend Developer: Antonio Moreno Castillo
 
 Tercer miembro: (por asignar)
 
