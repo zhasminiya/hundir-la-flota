@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hundir la Flota</title>
+
+    <!--carga la hoja de estilos-->
+    <link rel="stylesheet" href="css/estilo.css" />
+</head>
+<body>
+
+    <header>
+    </header>
+
+    <main class="seccion-principal">
+        <section>
+            <h1>Hundir la Flota</h1>
+            <div id="estado-del-juego"></div>
+            <div id="tablero"></div>
+
+            <div id="ventana-ganador" class="ventana-ganador hidden">
+                <div class="ventana-ganador-content">
+                    <h2>¡Eres el Ganador!</h2>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <aside class="zona-lateral">
+        <h2>Flota Enemiga</h2>
+
+        <div class="numero-disparos">
+            Disparos:
+        </div>
+
+        <h2>Mejores Puntuaciones</h2>
+
+        <button id="btn-iniciar">Reiniciar Juego</button>
+    </aside>
+
+    <footer class="footer">
+        <h3>2º DAW</h3>
+        <p>Eugenia Kostiukovskaia: Back-end - Antonio Moreno: Front-end</p>
+    </footer>
+
+    <!--carga el script que hará que el juego funcione-->
+    <script src="js/app.js"></script>
+</body>
+</html>
