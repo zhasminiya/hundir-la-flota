@@ -1,0 +1,277 @@
+/* general */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* cuerpo de la pagina */
+body {
+    background: #006bff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    grid-template-areas:
+        "header header"
+        "main aside"
+        "footer footer";
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Contenedor para main y aside */
+body > main,
+body > aside {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+.seccion-principal {
+    grid-area: main;
+}
+
+.zona-lateral {
+    grid-area: aside;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+
+
+/* tablero de juego */
+.seccion-principal {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
+    .seccion-principal h1 {
+        font-size: 2.5em;
+        color: #006BFF;
+        margin-bottom: 10px;
+        font-weight: 700;
+    }
+
+#estado-del-juego {
+    color: #475569;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+#tablero {
+    display: grid;
+    grid-template-columns: repeat(10, 50px);
+    grid-template-rows: repeat(10, 50px);
+    gap: 2px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    justify-content: center;
+}
+
+.celda {
+    width: 50px;
+    height: 50px;
+    background: #60a5fa;
+    cursor: pointer;
+    border: 2px solid #3b82f6;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+    
+
+/* Aside - barra lateral */
+.zona-lateral {
+    background: #f0f4f8;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    width: 100%;
+}
+
+    .zona-lateral h2 {
+        color: #006BFF;
+        margin-bottom: 15px;
+        font-size: 1.3em;
+        font-weight: 700;
+    }
+
+#estado-flota {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+    #estado-flota li {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 14px;
+        border-radius: 8px;
+        margin-bottom: 8px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+    }
+
+        
+.numero-disparos {
+    background: #006BFF;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.1em;
+}
+
+#lista-ganadores {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+    max-height: 200px;
+    overflow-y: auto;
+    scrollbar-width: auto;
+    scrollbar-color: #006bff #e0e7ef;
+}
+
+    #lista-ganadores li {
+        background: #ffffff;
+        padding: 8px 12px;
+        border-radius: 6px;
+        margin-bottom: 6px;
+        color: #334155;
+        font-size: 0.9em;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+    }
+
+    /* Scrollbar Chrome/Edge/Webkit */
+    #lista-ganadores::-webkit-scrollbar {
+        width: 18px;
+        background: #006bff; /* Fondo del scrollbar */
+    }
+
+    #lista-ganadores::-webkit-scrollbar-thumb {
+        background: #006bff; /* Color azul del "thumb" */
+        border-radius: 10px; /* Contorno redondeado */
+    }
+
+        #lista-ganadores::-webkit-scrollbar-thumb:hover {
+            background: #2563eb; /* Azul más oscuro al pasar el mouse */
+        }
+
+#btn-iniciar {
+    width: 100%;
+    padding: 12px;
+    background: #006BFF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+    #btn-iniciar:hover {
+        background: #1e40af;
+    }
+
+/* Ventana del ganador */
+.ventana-ganador {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+    .ventana-ganador.hidden {
+        display: none;
+    }
+
+
+/* Footer */
+.footer {
+    width: 100%;
+    padding: 15px 20px;
+    text-align: center;
+    color: #000;
+    background-color: #FFF;
+    border-radius: 12px;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+    .footer h3 {
+        text-align: center;
+        color: #006bff;
+    }
+
+    .footer .color {
+        text-align: center;
+        color: #006bff;
+    }
+
+    .footer br.oculto {
+        display: none;
+    }
+
+
+/* Responsive */
+@media (max-width: 1000px) {
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .zona-lateral {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .seccion-principal h1 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 600px) {
+    #tablero {
+        grid-template-columns: repeat(10, 32px);
+        grid-template-rows: repeat(10, 32px);
+    }
+
+    .celda {
+        width: 32px;
+        height: 32px;
+    }
+
+    .footer .ocultar-guion {
+        display: none;
+    }
+
+    .footer br.oculto {
+        display: inline;
+    }
+}
