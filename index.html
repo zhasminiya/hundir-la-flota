@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hundir la Flota</title>
 
-    <!--carga la hoja de estilos-->
+    <!-- hoja de estilos -->
     <link rel="stylesheet" href="css/estilo.css" />
 </head>
 <body>
@@ -16,8 +16,53 @@
     <main class="seccion-principal">
         <section>
             <h1>Hundir la Flota</h1>
-            <div id="estado-del-juego"></div>
-            <div id="tablero"></div>
+    
+            <div id="tablero">
+                <!--Estas celdas hay que quitarlas se cargarán en tiempo de ejecución-->
+                <div class="celda" data-x="0" data-y="0"></div>
+                <div class="celda" data-x="1" data-y="0"></div>
+                <div class="celda" data-x="2" data-y="0"></div>
+                <div class="celda" data-x="3" data-y="0"></div>
+                <div class="celda" data-x="4" data-y="0"></div>
+                <div class="celda" data-x="5" data-y="0"></div>
+                <div class="celda" data-x="6" data-y="0"></div>
+                <div class="celda" data-x="7" data-y="0"></div>
+                <div class="celda" data-x="8" data-y="0"></div>
+                <div class="celda" data-x="9" data-y="0"></div>
+                <div class="celda" data-x="0" data-y="0"></div>
+                <div class="celda" data-x="1" data-y="0"></div>
+                <div class="celda" data-x="2" data-y="0"></div>
+                <div class="celda" data-x="3" data-y="0"></div>
+                <div class="celda" data-x="4" data-y="0"></div>
+                <div class="celda" data-x="5" data-y="0"></div>
+                <div class="celda" data-x="6" data-y="0"></div>
+                <div class="celda" data-x="7" data-y="0"></div>
+                <div class="celda" data-x="8" data-y="0"></div>
+                <div class="celda" data-x="9" data-y="0"></div>
+                <div class="celda" data-x="0" data-y="0"></div>
+                <div class="celda" data-x="1" data-y="0"></div>
+                <div class="celda" data-x="2" data-y="0"></div>
+                <div class="celda" data-x="3" data-y="0"></div>
+                <div class="celda" data-x="4" data-y="0"></div>
+                <div class="celda" data-x="5" data-y="0"></div>
+                <div class="celda" data-x="6" data-y="0"></div>
+                <div class="celda" data-x="7" data-y="0"></div>
+                <div class="celda" data-x="8" data-y="0"></div>
+                <div class="celda" data-x="9" data-y="0"></div>
+                <div class="celda" data-x="0" data-y="0"></div>
+                <div class="celda" data-x="1" data-y="0"></div>
+                <div class="celda" data-x="2" data-y="0"></div>
+                <div class="celda" data-x="3" data-y="0"></div>
+                <div class="celda" data-x="4" data-y="0"></div>
+                <div class="celda" data-x="5" data-y="0"></div>
+                <div class="celda" data-x="6" data-y="0"></div>
+                <div class="celda" data-x="7" data-y="0"></div>
+                <div class="celda" data-x="8" data-y="0"></div>
+                <div class="celda" data-x="9" data-y="0"></div>
+                <!--fin quitar celdas-->
+            </div>
+
+	    <div id="estado-del-juego"></div>
 
             <div id="ventana-ganador" class="ventana-ganador hidden">
                 <div class="ventana-ganador-content">
@@ -29,22 +74,46 @@
 
     <aside class="zona-lateral">
         <h2>Flota Enemiga</h2>
+        <ul id="estado-flota">
+	    <!--esta lista hay que quitarla se cargará en tiempo de ejecucion-->
+            <li><span>Portaviones</span> <span>(5 casillas)</span></li>
+            <li><span>Acorazado</span> <span>(4 casillas)</span></li>
+            <li><span>Destructor</span> <span>(3 casillas)</span></li>
+            <li><span>Submarino</span> <span>(3 casillas)</span></li>
+            <li><span>Patrullero</span> <span>(2 casillas)</span></li>
+	    <!--fin quitar lista-->
+        </ul>
 
         <div class="numero-disparos">
-            Disparos:
+            Disparos: 0
         </div>
 
         <h2>Mejores Puntuaciones</h2>
+        <ol id="lista-ganadores">
+	    <!--esta lista hay que quitarla se leerá el fichero en tiempo de ejecucion-->
+            <li>1. Usuario 1 - 41 disparos</li>
+            <li>2. Usuario 2 - 56 disparos</li>
+            <li>3. Usuario 3 - 80 disparos</li>
+            <li>4. Usuario 4 - 77 disparos</li>
+            <li>1. Usuario 1 - 41 disparos</li>
+            <li>2. Usuario 2 - 56 disparos</li>
+            <li>3. Usuario 3 - 80 disparos</li>
+            <li>4. Usuario 4 - 77 disparos</li>
+            <li>1. Usuario 1 - 41 disparos</li>
+            <li>2. Usuario 2 - 56 disparos</li>
+	    <!--fin quitar lista-->
+
+        </ol>
 
         <button id="btn-iniciar">Reiniciar Juego</button>
     </aside>
 
     <footer class="footer">
-        <h3>2º DAW</h3>
-        <p>Eugenia Kostiukovskaia: Back-end - Antonio Moreno: Front-end</p>
+        <h3>2º DAW · 25/26</h3>
+        <p>Eugenia Kostiukovskaia: <span class="color">Back-end</span> <span class="ocultar-guion">-</span><br class="oculto"> Antonio Moreno: <span class="color">Front-end</span></p>
     </footer>
 
-    <!--carga el script que hará que el juego funcione-->
+    <!-- script que hará que el juego funcione-->
     <script src="js/app.js"></script>
 </body>
 </html>
