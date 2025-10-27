@@ -3,17 +3,22 @@
 // Genera una partida nueva: coloca aleatoriamente la flota en un tablero 10x10
 // Devuelve JSON con la flota y sus coordenadas.
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 // Cabeceras: JSON y permitir acceso desde el front (útil en dev local).
 header('Content-Type: application/json; charset=utf-8');
 header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+
 //Configuracion
 
 $tablero = 10;
 
 //Definicion de la flota: nombre y tamaño
 $definicionFlota = [
-    ["nombre" => "Portaaviones", "tamano" => 5],
+    ["nombre" => "Portaviones", "tamano" => 5],
     ["nombre" => "Acorazado", "tamano" => 4],
     ["nombre" => "Destructor", "tamano" => 3],
     ["nombre" => "Submarino", "tamano" => 3],
