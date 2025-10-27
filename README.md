@@ -34,14 +34,14 @@ hundir-la-flota/
 │ ├── iniciar-juego.php # Inicia una nueva partida
 │ ├── guardar-puntuaciones.php # Guarda las puntuaciones
 │ ├── puntuaciones.php # Devuelve el ranking de jugadores
-│ └── scores.json # Archivo de almacenamiento
-├── frontend/
-│ ├── index.html # Página principal del juego
-│ ├── css/
-│ │ └── estilo.css # Hojas de estilo
-│ ├── js/
-│ │ └── juego.js # Lógica del tablero y disparos
-│ └── assets/ # Imágenes e iconos del juego
+│ └── ranking.json # Archivo de almacenamiento
+├── index.html # Página principal del juego
+├── css/
+│ └── estilo.css # Hojas de estilo
+├── js/
+│ └── juego.js # Lógica del tablero y disparos
+├── imagenes/
+│ └── xxxxx # diversas imagenes para el juego
 ├── .gitignore # Archivos ignorados por Git
 └── README.md # Documentación principal
 ```
