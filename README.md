@@ -34,7 +34,7 @@ hundir-la-flota/
 │ ├── iniciar-juego.php # Inicia una nueva partida
 │ ├── guardar-puntuaciones.php # Guarda las puntuaciones
 │ ├── puntuaciones.php # Devuelve el ranking de jugadores
-│ └── ranking.json # Archivo de almacenamiento
+│ └── puntuaciones.json # Archivo de almacenamiento
 ├── index.html # Página principal del juego
 ├── css/
 │ └── estilo.css # Hojas de estilo
@@ -71,7 +71,8 @@ http://localhost/hundir-la-flota/
 
 👥 Equipo de Desarrollo
 
-Backend Developer: Eugenia Kostiukovskaia Essitachvili
+Backend Developer: Eugenia Kostiukovskaia Essitachvili  
+
 Frontend Developer: Antonio Moreno Castillo
 
 📄 Licencia
