@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8" />
+    <!-- Nos aseguramos que la página sea responsiva en dispositivos móviles -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hundir la Flota</title>
 
@@ -13,107 +14,65 @@
     <header>
     </header>
 
+    <!--Zona principal-->
     <main class="seccion-principal">
         <section>
-            <h1>Hundir la Flota</h1>
-    
-            <div id="tablero">
-                <!--Estas celdas hay que quitarlas se cargarán en tiempo de ejecución-->
-                <div class="celda" data-x="0" data-y="0"></div>
-                <div class="celda" data-x="1" data-y="0"></div>
-                <div class="celda" data-x="2" data-y="0"></div>
-                <div class="celda" data-x="3" data-y="0"></div>
-                <div class="celda" data-x="4" data-y="0"></div>
-                <div class="celda" data-x="5" data-y="0"></div>
-                <div class="celda" data-x="6" data-y="0"></div>
-                <div class="celda" data-x="7" data-y="0"></div>
-                <div class="celda" data-x="8" data-y="0"></div>
-                <div class="celda" data-x="9" data-y="0"></div>
-                <div class="celda" data-x="0" data-y="0"></div>
-                <div class="celda" data-x="1" data-y="0"></div>
-                <div class="celda" data-x="2" data-y="0"></div>
-                <div class="celda" data-x="3" data-y="0"></div>
-                <div class="celda" data-x="4" data-y="0"></div>
-                <div class="celda" data-x="5" data-y="0"></div>
-                <div class="celda" data-x="6" data-y="0"></div>
-                <div class="celda" data-x="7" data-y="0"></div>
-                <div class="celda" data-x="8" data-y="0"></div>
-                <div class="celda" data-x="9" data-y="0"></div>
-                <div class="celda" data-x="0" data-y="0"></div>
-                <div class="celda" data-x="1" data-y="0"></div>
-                <div class="celda" data-x="2" data-y="0"></div>
-                <div class="celda" data-x="3" data-y="0"></div>
-                <div class="celda" data-x="4" data-y="0"></div>
-                <div class="celda" data-x="5" data-y="0"></div>
-                <div class="celda" data-x="6" data-y="0"></div>
-                <div class="celda" data-x="7" data-y="0"></div>
-                <div class="celda" data-x="8" data-y="0"></div>
-                <div class="celda" data-x="9" data-y="0"></div>
-                <div class="celda" data-x="0" data-y="0"></div>
-                <div class="celda" data-x="1" data-y="0"></div>
-                <div class="celda" data-x="2" data-y="0"></div>
-                <div class="celda" data-x="3" data-y="0"></div>
-                <div class="celda" data-x="4" data-y="0"></div>
-                <div class="celda" data-x="5" data-y="0"></div>
-                <div class="celda" data-x="6" data-y="0"></div>
-                <div class="celda" data-x="7" data-y="0"></div>
-                <div class="celda" data-x="8" data-y="0"></div>
-                <div class="celda" data-x="9" data-y="0"></div>
-                <!--fin quitar celdas-->
+            <div class="encabezado">
+                <h1>Hundir la Flota</h1>
             </div>
 
-	    <div id="estado-del-juego"></div>
+            <!-- Tablero generado en tiempo de ejecución con js -->
+            <div id="tablero"></div>
+            <!-- Etiqueta de cada pulsación hecha -->
+            <div id="estado-del-juego"></div>
 
+            <!-- Ventana emergente para el ganador -->
             <div id="ventana-ganador" class="ventana-ganador hidden">
                 <div class="ventana-ganador-content">
                     <h2>¡Eres el Ganador!</h2>
+                    <p>Has hundido toda la flota enemiga en <span id="total-disparos"></span> disparos.</p>
+                    <!-- Espacio para escribir tu nombre -->
+                    <input type="text" id="nombre-jugador" placeholder="Tu nombre" />
+                    <button id="guardar-puntuacion">Guardar Puntuación</button>
+                    <h3>Ranking</h3>
+                    <!-- lista de los mejores resultados -->
+                    <ul id="ventana-ganador-lista-ganadores"></ul>
+                    <button id="close-ventana-ganador">Cerrar</button>
                 </div>
             </div>
         </section>
     </main>
 
+    <!--Barra lateral-->
     <aside class="zona-lateral">
+        <!--Información de la flota enemiga -->
         <h2>Flota Enemiga</h2>
         <ul id="estado-flota">
-	    <!--esta lista hay que quitarla se cargará en tiempo de ejecucion-->
-            <li><span>Portaviones</span> <span>(5 casillas)</span></li>
-            <li><span>Acorazado</span> <span>(4 casillas)</span></li>
-            <li><span>Destructor</span> <span>(3 casillas)</span></li>
-            <li><span>Submarino</span> <span>(3 casillas)</span></li>
-            <li><span>Patrullero</span> <span>(2 casillas)</span></li>
-	    <!--fin quitar lista-->
         </ul>
 
+        <!-- Contador de disparos realizados -->
         <div class="numero-disparos">
-            Disparos: 0
+            Disparos: <span id="recuento">0</span>
         </div>
 
+        <!-- Lista de los 10 mejores resultados -->
         <h2>Mejores Puntuaciones</h2>
-        <ol id="lista-ganadores">
-	    <!--esta lista hay que quitarla se leerá el fichero en tiempo de ejecucion-->
-            <li>1. Usuario 1 - 41 disparos</li>
-            <li>2. Usuario 2 - 56 disparos</li>
-            <li>3. Usuario 3 - 80 disparos</li>
-            <li>4. Usuario 4 - 77 disparos</li>
-            <li>1. Usuario 1 - 41 disparos</li>
-            <li>2. Usuario 2 - 56 disparos</li>
-            <li>3. Usuario 3 - 80 disparos</li>
-            <li>4. Usuario 4 - 77 disparos</li>
-            <li>1. Usuario 1 - 41 disparos</li>
-            <li>2. Usuario 2 - 56 disparos</li>
-	    <!--fin quitar lista-->
+        <ol id="lista-ganadores"></ol>
 
-        </ol>
-
+        <!-- Botón para empezar otra partida -->
         <button id="btn-iniciar">Reiniciar Juego</button>
     </aside>
 
     <footer class="footer">
+        <!-- Programadores -->
         <h3>2º DAW · 25/26</h3>
-        <p>Eugenia Kostiukovskaia: <span class="color">Back-end</span> <span class="ocultar-guion">-</span><br class="oculto"> Antonio Moreno: <span class="color">Front-end</span></p>
+        <p>
+            Eugenia Kostiukovskaia: <span class="color">Back-end</span> <span class="ocultar-guion">-</span><br class="oculto">
+            Antonio Moreno: <span class="color">Front-end</span>
+        </p>
     </footer>
 
-    <!-- script que hará que el juego funcione-->
+    <!-- JavaScript con la lógica del juego -->
     <script src="js/app.js"></script>
 </body>
 </html>

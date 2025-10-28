@@ -8,6 +8,10 @@
 /* cuerpo de la pagina */
 body {
     background: #006bff;
+    background-image: url('../imagenes/fondo.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     min-height: 100vh;
     padding: 20px;
@@ -23,12 +27,12 @@ body {
     padding: 20px;
 }
 
-/* Contenedor para main y aside */
-body > main,
-body > aside {
-    max-width: 1100px;
-    margin: 0 auto;
-}
+    /* Contenedor para main y aside */
+    body > main,
+    body > aside {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
 
 
 .seccion-principal {
@@ -48,15 +52,32 @@ body > aside {
 /* tablero de juego */
 .seccion-principal {
     background: #ffffff;
-    padding: 30px;
+    padding-top: 20px;
     border-radius: 12px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-    text-align: center;
     position: relative;
     width: 100%;
 }
 
-    .seccion-principal h1 {
+    .seccion-principal section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+.encabezado {
+    display: flex;
+    align-items: center;
+
+}
+
+    .encabezado img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .encabezado h1 {
+        margin: 0;
         font-size: 2.5em;
         color: #006BFF;
         margin-bottom: 10px;
@@ -65,34 +86,32 @@ body > aside {
 
 #estado-del-juego {
     color: #475569;
-    margin-bottom: 20px;
+    margin-top: 5px;
     font-size: 1.1em;
 }
 
 #tablero {
     display: grid;
-    grid-template-columns: repeat(10, 50px);
-    grid-template-rows: repeat(10, 50px);
+    grid-template-columns: repeat(10, 45px);
+    grid-template-rows: repeat(10, 45px);
     gap: 2px;
-    margin: 20px auto;
+    margin: 10px auto;
     background: #fff;
-    padding: 8px;
+    padding: 1px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     justify-content: center;
 }
 
 .celda {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     background: #60a5fa;
     cursor: pointer;
     border: 2px solid #3b82f6;
     border-radius: 4px;
     transition: all 0.2s ease;
 }
-
-    
 
 /* Aside - barra lateral */
 .zona-lateral {
@@ -127,7 +146,6 @@ body > aside {
         align-items: center;
     }
 
-        
 .numero-disparos {
     background: #006BFF;
     color: white;
@@ -157,21 +175,24 @@ body > aside {
         color: #334155;
         font-size: 0.9em;
         box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     /* Scrollbar Chrome/Edge/Webkit */
     #lista-ganadores::-webkit-scrollbar {
         width: 18px;
-        background: #006bff; /* Fondo del scrollbar */
+        background: #006bff;
     }
 
     #lista-ganadores::-webkit-scrollbar-thumb {
-        background: #006bff; /* Color azul del "thumb" */
-        border-radius: 10px; /* Contorno redondeado */
+        background: #006bff;
+        border-radius: 10px;
     }
 
         #lista-ganadores::-webkit-scrollbar-thumb:hover {
-            background: #2563eb; /* Azul más oscuro al pasar el mouse */
+            background: #2563eb;
         }
 
 #btn-iniciar {
@@ -187,10 +208,6 @@ body > aside {
     transition: background 0.3s ease;
 }
 
-    #btn-iniciar:hover {
-        background: #1e40af;
-    }
-
 /* Ventana del ganador */
 .ventana-ganador {
     position: fixed;
@@ -205,10 +222,112 @@ body > aside {
     z-index: 1000;
 }
 
+#ventana-ganador-lista-ganadores li {
+    padding: 10px;
+    margin: 6px 0;
+    background: #f1f5f9;
+    border-radius: 6px;
+    border-left: 4px solid #3b82f6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
     .ventana-ganador.hidden {
         display: none;
     }
 
+.ventana-ganador-content {
+    background: white;
+    padding: 35px;
+    border-radius: 16px;
+    width: 450px;
+    max-width: 90vw;
+    text-align: center;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+}
+
+    .ventana-ganador-content h2 {
+        color: #16a34a;
+        margin-bottom: 15px;
+        font-size: 2em;
+    }
+
+    .ventana-ganador-content p {
+        color: #475569;
+        font-size: 1.1em;
+        margin-bottom: 20px;
+    }
+
+    .ventana-ganador-content input {
+        width: 85%;
+        padding: 12px;
+        margin: 15px 0;
+        border: 2px solid #cbd5e1;
+        border-radius: 8px;
+        font-size: 16px;
+    }
+
+    .ventana-ganador-content button {
+        padding: 12px 24px;
+        margin: 8px;
+        border: none;
+        border-radius: 8px;
+        font-size: 15px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+/* Estilos para los ganadores con alineaciÃ³n */
+.ganador-contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+
+.ganador-izquierda {
+    text-align: left;
+    flex: 1;
+    font-weight: 500;
+}
+
+.ganador-derecha {
+    text-align: right;
+    flex-shrink: 0;
+    white-space: nowrap;
+    font-weight: 600;
+    color: #006bff;
+}
+
+
+#guardar-puntuacion {
+    background: #16a34a;
+    color: white;
+}
+
+#close-ventana-ganador {
+    background: #64748b;
+    color: white;
+}
+
+#ventana-ganador-lista-ganadores {
+    list-style: none;
+    margin-top: 15px;
+    max-height: 250px;
+    overflow-y: auto;
+    text-align: left;
+}
+
+    #ventana-ganador-lista-ganadores li {
+        padding: 10px;
+        margin: 6px 0;
+        background: #f1f5f9;
+        border-radius: 6px;
+        border-left: 4px solid #3b82f6;
+    }
 
 /* Footer */
 .footer {
@@ -238,9 +357,8 @@ body > aside {
         display: none;
     }
 
-
 /* Responsive */
-@media (max-width: 1000px) {
+@media (max-width: 900px) {
     body {
         display: flex;
         flex-direction: column;
@@ -254,6 +372,14 @@ body > aside {
     .seccion-principal h1 {
         font-size: 2em;
     }
+
+    .footer .ocultar-guion {
+        display: none;
+    }
+
+    .footer br.oculto {
+        display: inline;
+    }
 }
 
 @media (max-width: 600px) {
@@ -265,13 +391,5 @@ body > aside {
     .celda {
         width: 32px;
         height: 32px;
-    }
-
-    .footer .ocultar-guion {
-        display: none;
-    }
-
-    .footer br.oculto {
-        display: inline;
     }
 }
