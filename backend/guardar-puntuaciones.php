@@ -67,7 +67,6 @@ try {
     $puntuaciones[] = [
         'nombre' => $nombre,
         'disparos' => $disparos,
-        'fecha' => date('d-m-Y H:i:s')
     ];
 
     // ordenamos
