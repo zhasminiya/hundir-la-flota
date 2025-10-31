@@ -62,7 +62,7 @@ body {
     .seccion-principal section {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: center; /* Centra horizontalmente */
     }
 
 .encabezado {
@@ -113,6 +113,7 @@ body {
     transition: all 0.2s ease;
 }
 
+    
 /* Aside - barra lateral */
 .zona-lateral {
     background: #f0f4f8;
@@ -180,7 +181,7 @@ body {
         align-items: center;
     }
 
-    /* Scrollbar Chrome/Edge/Webkit */
+    /* Scrollbar */
     #lista-ganadores::-webkit-scrollbar {
         width: 18px;
         background: #006bff;
@@ -195,6 +196,7 @@ body {
             background: #2563eb;
         }
 
+
 #btn-iniciar {
     width: 100%;
     padding: 12px;
@@ -207,6 +209,7 @@ body {
     cursor: pointer;
     transition: background 0.3s ease;
 }
+
 
 /* Ventana del ganador */
 .ventana-ganador {
@@ -232,6 +235,7 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+
 
     .ventana-ganador.hidden {
         display: none;
@@ -279,7 +283,7 @@ body {
         transition: all 0.3s ease;
     }
 
-/* Estilos para los ganadores con alineación */
+/* ganadores */
 .ganador-contenedor {
     display: flex;
     justify-content: space-between;
@@ -308,10 +312,12 @@ body {
     color: white;
 }
 
+
 #close-ventana-ganador {
     background: #64748b;
     color: white;
 }
+
 
 #ventana-ganador-lista-ganadores {
     list-style: none;
