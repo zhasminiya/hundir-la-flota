@@ -5,6 +5,11 @@
     padding: 0;
 }
 
+html,
+body {
+    min-width: 400px;
+}
+
 /* cuerpo de la pagina */
 body {
     background: #006bff;
@@ -16,11 +21,13 @@ body {
     min-height: 100vh;
     padding: 20px;
     display: grid;
+    /* 2 columnas */
     grid-template-columns: 1fr 300px;
     grid-template-areas:
         "header header"
         "main aside"
         "footer footer";
+    /* espacio entre filas y columnas del grid*/
     gap: 30px;
     max-width: 1100px;
     margin: 0 auto;
@@ -54,26 +61,26 @@ body {
     background: #ffffff;
     padding-top: 20px;
     border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
     position: relative;
     width: 100%;
 }
 
     .seccion-principal section {
         display: flex;
+        /* flex modo columna */
         flex-direction: column;
-        align-items: center; /* Centra horizontalmente */
+        align-items: center;
     }
 
 .encabezado {
     display: flex;
     align-items: center;
-
+    margin: 10px auto;
 }
 
     .encabezado img {
-        width: 60px;
-        height: 60px;
+        height: 80px;
     }
 
     .encabezado h1 {
@@ -86,20 +93,24 @@ body {
 
 #estado-del-juego {
     color: #475569;
-    margin-top: 5px;
+    margin-top: 15px;
     font-size: 1.1em;
 }
 
 #tablero {
     display: grid;
+    /* 10 columnas de ancho 45px */
     grid-template-columns: repeat(10, 45px);
+    /* 10 filas de alto 45px */
     grid-template-rows: repeat(10, 45px);
+    /* separacion entre filas y columnas */
     gap: 2px;
-    margin: 10px auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
     background: #fff;
     padding: 1px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     justify-content: center;
 }
 
@@ -111,15 +122,44 @@ body {
     border: 2px solid #3b82f6;
     border-radius: 4px;
     transition: all 0.2s ease;
+    /* Si queremos dibujitos */
+    display: flex; /* Para centrar */
+    align-items: center; /* Centrado vertical */
+    justify-content: center; /* Centrado horizontal */
+    font-size: 24px;
 }
 
-    
+    .celda:hover {
+        transform: scale(1.08);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .celda.agua {
+        background: #bfdbfe;
+        border-color: #93c5fd;
+        cursor: not-allowed;
+    }
+
+    .celda.tocado {
+        background: #fbbf24;
+        border-color: #f59e0b;
+        cursor: not-allowed;
+        position: relative;
+    }
+
+    .celda.hundido {
+        background: #ef4444;
+        border-color: #dc2626;
+        cursor: not-allowed;
+    }
+
+
 /* Aside - barra lateral */
 .zona-lateral {
     background: #f0f4f8;
     padding: 25px;
     border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
     width: 100%;
 }
 
@@ -146,6 +186,26 @@ body {
         display: flex;
         align-items: center;
     }
+
+        #estado-flota li.agua {
+            background: #dbeafe;
+            color: #1e3a8a;
+            border-left: 4px solid #3b82f6;
+        }
+
+        #estado-flota li.tocado {
+            background: #fbbf24;
+            color: #1e3a8a;
+            border-left: 4px solid #ff7b00;
+        }
+
+        #estado-flota li.hundido {
+            background: #ef4444;
+            color: #1e3a8a;
+            border-left: 4px solid #ef4444;
+            text-decoration: line-through;
+            opacity: 0.7;
+        }
 
 .numero-disparos {
     background: #006BFF;
@@ -175,13 +235,13 @@ body {
         margin-bottom: 6px;
         color: #334155;
         font-size: 0.9em;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
 
-    /* Scrollbar */
+    /* Scrollbar color azul */
     #lista-ganadores::-webkit-scrollbar {
         width: 18px;
         background: #006bff;
@@ -210,6 +270,9 @@ body {
     transition: background 0.3s ease;
 }
 
+    #btn-iniciar:hover {
+        background: #1e40af;
+    }
 
 /* Ventana del ganador */
 .ventana-ganador {
@@ -218,7 +281,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0, 0, 0, 0.7);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -237,9 +300,9 @@ body {
 }
 
 
-    .ventana-ganador.hidden {
-        display: none;
-    }
+.ventana-ganador.hidden {
+    display: none;
+}
 
 .ventana-ganador-content {
     background: white;
@@ -248,7 +311,7 @@ body {
     width: 450px;
     max-width: 90vw;
     text-align: center;
-    box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
     .ventana-ganador-content h2 {
@@ -283,7 +346,7 @@ body {
         transition: all 0.3s ease;
     }
 
-/* ganadores */
+/* Estilos para los ganadores con alineación */
 .ganador-contenedor {
     display: flex;
     justify-content: space-between;
@@ -312,17 +375,24 @@ body {
     color: white;
 }
 
+    #guardar-puntuacion:hover {
+        background: #15803d;
+    }
 
 #close-ventana-ganador {
     background: #64748b;
     color: white;
 }
 
+    #close-ventana-ganador:hover {
+        background: #475569;
+    }
 
 #ventana-ganador-lista-ganadores {
     list-style: none;
     margin-top: 15px;
     max-height: 250px;
+    /* mostramos el scroll vertical si hiciera falta */
     overflow-y: auto;
     text-align: left;
 }
@@ -335,6 +405,59 @@ body {
         border-left: 4px solid #3b82f6;
     }
 
+/* Modal de eleccion entre colores u iconos */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+    .modal.hidden {
+        display: none;
+    }
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 300px;
+}
+
+/* Opciones del modal (botones) */
+#preferencias-colores,
+#preferencias-iconos,
+#preferencias-cancelar {
+    margin: 10px 0;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#preferencias-colores {
+    background-color: #34d399; /* verde */
+    color: #fff;
+}
+
+#preferencias-iconos {
+    background-color: #3b82f6; /* azul */
+    color: #fff;
+}
+
+#preferencias-cancelar {
+    background-color: #ef4444; /* rojo */
+    color: #fff;
+}
+
 /* Footer */
 .footer {
     width: 100%;
@@ -346,7 +469,7 @@ body {
     font-size: 1em;
     font-weight: 500;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
     .footer h3 {
@@ -362,6 +485,7 @@ body {
     .footer br.oculto {
         display: none;
     }
+
 
 /* Responsive */
 @media (max-width: 900px) {
@@ -386,6 +510,15 @@ body {
     .footer br.oculto {
         display: inline;
     }
+
+    #tablero {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    #estado-del-juego {
+        margin-bottom: 20px;
+    }
 }
 
 @media (max-width: 600px) {
@@ -398,4 +531,62 @@ body {
         width: 32px;
         height: 32px;
     }
+
+    #tablero {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    #estado-del-juego {
+        font-size: 0.8em;
+    }
+}
+
+
+/* Animaciones */
+/* solo si activamos los e.target del click en la celda en el app.js */
+/* impacto solamente se hace grande y vuelve a su tamaño */
+@keyframes animacion-impacto {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.celda.animacion-impacto {
+    animation: animacion-impacto 0.3s ease;
+}
+
+/* hundido se hace grande, rota derecha/izquierda, vuelve a su posición y asu tamaño */
+@keyframes animacion-hundido {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    25% {
+        transform: scale(1.5) rotate(5deg);
+    }
+
+    50% {
+        transform: scale(1.5) rotate(-5deg);
+    }
+
+    75% {
+        transform: scale(1.5) rotate(5deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+.celda.animacion-hundido {
+    animation: animacion-hundido 0.5s ease;
 }

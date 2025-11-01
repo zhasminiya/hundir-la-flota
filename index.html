@@ -4,26 +4,52 @@
     <meta charset="UTF-8" />
     <!-- Nos aseguramos que la página sea responsiva en dispositivos móviles -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hundir la Flota</title>
+    <title>Hundir la Flota by Eugenia & Antonio</title>
 
     <!-- Básicos para SEO -->
     <meta name="description" content="Juego de Hundir la Flota">
     <meta name="keywords" content="hundir la flota, juego, divertido, el mejor, se merece un 10">
     <meta name="robots" content="index, follow">
 
-    <!-- CAMBIADO: ruta del CSS corregida para coincidir con A.html -->
+    <!-- Redes Sociales  -->
+    <meta property="og:title" content="Hundir la Flota by Eugenia & Antonio">
+    <meta property="og:description" content="El mejor Juego de Hundir la Flota que hayas jugado">
+    <meta property="og:image" content="https://www.hundir-la-flota.es/imagenes/logo.png">
+    <meta property="og:url" content="https://www.hundir-la-flota.es/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="El mejor Juego de Hundir la Flota que hayas jugado">
+    <meta name="twitter:title" content="Hundir la Flota by Eugenia & Antonio">
+    <meta name="twitter:description" content="El mejor Juego de Hundir la Flota que hayas jugado">
+    <meta name="twitter:image" content="https://www.hundir-la-flota.es/imagenes/logo.png">
+
+    <!-- Básicos para SEO -->
+    <meta name="author" content="Eugenia Kostiukovskaia & Antonio Moreno">
+    <meta name="copyright" content="© 2025/26 2ª DAW">
+
+    <!-- Iconos para distintas plataformas -->
+    <link rel="icon" type="image/png" sizes="32x32" href="imagenes/favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="imagenes/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="imagenes/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="imagenes/favicon-512x512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="imagenes/apple-touch-icon.png">
+
+    <!-- hoja de estilos -->
     <link rel="stylesheet" href="css/estilo.css" />
 </head>
 <body>
 
     <header>
-       
     </header>
 
     <!--Zona principal-->
     <main class="seccion-principal">
         <section>
-            <h1>Hundir la Flota</h1>
+            <div class="encabezado">
+                <img src="imagenes/logo.png" alt="Hundir la Flota">
+                <h1>Hundir la Flota</h1>
+            </div>
 
             <!-- Tablero generado en tiempo de ejecución con js -->
             <div id="tablero"></div>
@@ -42,6 +68,16 @@
                     <!-- lista de los mejores resultados -->
                     <ul id="ventana-ganador-lista-ganadores"></ul>
                     <button id="close-ventana-ganador">Cerrar</button>
+                </div>
+            </div>
+
+            <!-- Modal de eleccion entre colores o iconos -->
+            <div id="modal-preferencias" class="modal hidden">
+                <div class="modal-content">
+                    <h2>Elige una opción</h2>
+                    <br />
+                    <button id="preferencias-colores">Solo Colores</button>
+                    <button id="preferencias-iconos">Iconos y Animaciones</button>
                 </div>
             </div>
         </section>
@@ -76,7 +112,7 @@
         </p>
     </footer>
 
-    <!-- CAMBIADO: ruta del JavaScript corregida -->
+    <!-- JavaScript con la lógica del juego -->
     <script src="js/app.js"></script>
 </body>
 </html>
