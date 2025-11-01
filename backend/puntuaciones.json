@@ -1,12 +1,14 @@
 [
     {
         "nombre": "Eugenia",
-        "disparos": 28,
-        "fecha": "2025-10-27 18:42:59"
+        "disparos": 36
     },
     {
-        "nombre": "antonio",
-        "disparos": 40,
-        "fecha": "28-10-2025 14:52:45"
+        "nombre": "Antonio",
+        "disparos": 46
+    },
+    {
+        "nombre": "Paco",
+        "disparos": 49
     }
 ]
