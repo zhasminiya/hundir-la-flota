@@ -39,7 +39,7 @@ hundir-la-flota/
 ├── css/
 │ └── estilo.css # Hojas de estilo
 ├── js/
-│ └── juego.js # Lógica del tablero y disparos
+│ └── app.js # Lógica del tablero y disparos
 ├── imagenes/
 │ └── xxxxx # diversas imagenes para el juego
 ├── .gitignore # Archivos ignorados por Git
